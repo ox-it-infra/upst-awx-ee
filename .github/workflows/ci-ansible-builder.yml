@@ -28,4 +28,4 @@ jobs:
 
       - name: Build EE with ansible-builder
         run: |
-          ansible-builder build --tag ${{ vars.IMAGE_REGISTRY }}/awx-ee
+          ansible-builder build --tag ${{ vars.IMAGE_REGISTRY }}/${{ vars.CONTAINER_NAME }}

@@ -31,11 +31,11 @@ jobs:
 
       - name: Build and push image
         run: |
-          docker buildx create --name awx-ee-buildx
-          docker buildx use awx-ee-buildx
+          docker buildx create --name ${{ vars.CONTAINER_NAME }}-buildx
+          docker buildx use ${{ vars.CONTAINER_NAME }}-buildx
           ansible-builder create -v3 --output-file=Dockerfile
           docker buildx build \
             --push \
             --platform=linux/amd64 \
-            --tag=${{ vars.IMAGE_REGISTRY }}/awx-ee:latest \
+            --tag=${{ vars.IMAGE_REGISTRY }}/${{ vars.CONTAINER_NAME }}:latest \
             context
