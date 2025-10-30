@@ -31,6 +31,8 @@ dependencies:
       - name: kubevirt.core
         # this gives us community.general.dig, among others
       - name: community.general
+        # https://github.com/ansible-collections/community.general/blob/stable-11/CHANGELOG.md#removed-features-previously-deprecated need this for ansible-core < 2.16 compatability
+        version: "<11.0.0"
         # this gives us netbox integration
       - name: netbox.netbox
         version: "<3.0.0"
