@@ -43,6 +43,7 @@ dependencies:
       - name: ansible.netcommon
         # per https://github.com/ansible-collections/ansible.netcommon/releases need this for ansible-core < 2.16 compatability
         version: "<8.0.0"
+      - name: community.postgresql
   system: |
     git-core [platform:rpm]
     python3.11-devel [platform:rpm compile]
@@ -78,6 +79,7 @@ dependencies:
     receptorctl
     dnspython
     netaddr
+    psycopg2-binary
 additional_build_steps:
   append_base:
     - RUN $PYCMD -m pip install -U pip
