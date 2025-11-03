@@ -35,7 +35,8 @@ dependencies:
         version: "<11.0.0"
         # this gives us netbox integration
       - name: netbox.netbox
-        version: "<3.0.0"
+        # this seems to be the latest version that works with ansible 2.15 (via trial and error)
+        version: "<3.21.0"
       - name: ansible.utils
         # per https://github.com/ansible-collections/ansible.utils/releases/tag/v6.0.0 need this for ansible-core compatability
         version: "<6.0.0"
@@ -80,6 +81,7 @@ dependencies:
     dnspython
     netaddr
     psycopg2-binary
+    ara==1.5.8
 additional_build_steps:
   append_base:
     - RUN $PYCMD -m pip install -U pip
