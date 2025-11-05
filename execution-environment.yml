@@ -81,7 +81,6 @@ dependencies:
     dnspython
     netaddr
     psycopg2-binary
-    ara==1.5.8
 additional_build_steps:
   append_base:
     - RUN $PYCMD -m pip install -U pip
