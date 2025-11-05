@@ -45,6 +45,7 @@ dependencies:
         # per https://github.com/ansible-collections/ansible.netcommon/releases need this for ansible-core < 2.16 compatability
         version: "<8.0.0"
       - name: community.postgresql
+      - name: community.mysql
   system: |
     git-core [platform:rpm]
     python3.11-devel [platform:rpm compile]
