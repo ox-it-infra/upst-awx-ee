@@ -25,22 +25,24 @@ dependencies:
       - name: community.vmware
       - name: ovirt.ovirt
       - name: kubernetes.core
+        # https://github.com/ansible-collections/kubernetes.core/tree/stable-5?tab=readme-ov-file#ansible-version-compatibility
+        version: "<6.0.0"
       - name: ansible.posix
       - name: ansible.windows
       - name: redhatinsights.insights
       - name: kubevirt.core
-        # this gives us community.general.dig, among others
+        # this gives us community.general.dig, among others:
       - name: community.general
         # https://github.com/ansible-collections/community.general/blob/stable-11/CHANGELOG.md#removed-features-previously-deprecated need this for ansible-core < 2.16 compatability
         version: "<11.0.0"
-        # this gives us netbox integration
+        # this gives us netbox integration:
       - name: netbox.netbox
         # this seems to be the latest version that works with ansible 2.15 (via trial and error)
         version: "<3.21.0"
       - name: ansible.utils
         # per https://github.com/ansible-collections/ansible.utils/releases/tag/v6.0.0 need this for ansible-core compatability
         version: "<6.0.0"
-        # for backwards compatability (cf https://github.com/ansible/ansible/issues/77223)
+        # for backwards compatability (cf https://github.com/ansible/ansible/issues/77223):
       - name: ansible.netcommon
         # per https://github.com/ansible-collections/ansible.netcommon/releases need this for ansible-core < 2.16 compatability
         version: "<8.0.0"
